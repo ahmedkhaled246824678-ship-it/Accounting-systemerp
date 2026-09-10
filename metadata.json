@@ -1,0 +1,6 @@
+{
+  "name": "نظام المحاسبة المتكامل - Al-Mowaseb ERP",
+  "description": "برنامج محاسبي شامل مع دليل الحسابات، القوائم المالية، حركة الخزينة والبنوك، مراكز التكلفة، العهد، السلف، الأصول الثابتة، المخزون، الموارد البشرية، والتحليل المالي",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

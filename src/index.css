@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+@media print {
+  /* Hide all elements marked with .no-print */
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  html, body, #root, div, main, article, section {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    direction: rtl !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Printable Table / Statement Styles */
+  .printable-container {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .printable-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    font-size: 9.5pt !important;
+    page-break-inside: auto !important;
+  }
+
+  .printable-table tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  .printable-table th,
+  .printable-table td {
+    border: 1px solid #1e293b !important;
+    padding: 6px 8px !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    text-align: center !important;
+  }
+
+  .printable-table th {
+    background-color: #f1f5f9 !important;
+    font-weight: bold !important;
+  }
+
+  .printable-table tfoot tr td {
+    background-color: #e2e8f0 !important;
+    font-weight: bold !important;
+    border-top: 2px solid #000000 !important;
+  }
+
+  /* Dedicated Enlarged Single Customer Invoice Receipt Printing */
+  body.printing-single-invoice-active .printable-container > *:not(.single-invoice-receipt-modal),
+  body.printing-single-invoice-active .no-print {
+    display: none !important;
+  }
+
+  body.printing-single-invoice-active .printable-container {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  body.printing-single-invoice-active @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  body.printing-single-invoice-active .single-invoice-receipt-modal {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    z-index: 999999 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  body.printing-single-invoice-active .single-invoice-receipt-modal > div {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+  }
+
+  .single-invoice-receipt-content {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 3px solid #0f172a !important;
+    border-radius: 12px !important;
+    padding: 28px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    font-size: 14pt !important;
+    line-height: 1.6 !important;
+  }
+
+  .single-invoice-receipt-content * {
+    color: #000000 !important;
+    border-color: #1e293b !important;
+  }
+
+  .single-receipt-title {
+    font-size: 22pt !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+  }
+
+  .single-receipt-badge {
+    font-size: 14pt !important;
+    font-weight: 800 !important;
+    padding: 8px 16px !important;
+    background-color: #f1f5f9 !important;
+    border: 2px solid #0f172a !important;
+    border-radius: 8px !important;
+  }
+
+  .single-receipt-customer-box {
+    background-color: #f8fafc !important;
+    border: 2px solid #1e293b !important;
+    padding: 16px !important;
+    font-size: 13pt !important;
+    border-radius: 10px !important;
+  }
+
+  .single-receipt-customer-name {
+    font-size: 18pt !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+  }
+
+  .single-receipt-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 18px 0 !important;
+    font-size: 14pt !important;
+  }
+
+  .single-receipt-table th,
+  .single-receipt-table td {
+    border: 2px solid #0f172a !important;
+    padding: 12px 14px !important;
+    text-align: center !important;
+  }
+
+  .single-receipt-table th {
+    background-color: #e2e8f0 !important;
+    font-weight: 900 !important;
+    font-size: 14pt !important;
+  }
+
+  .single-receipt-tax-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .single-receipt-tax-item {
+    border: 2px solid #1e293b !important;
+    background-color: #f8fafc !important;
+    padding: 10px !important;
+    font-size: 12pt !important;
+    border-radius: 8px !important;
+  }
+
+  .single-receipt-total-box {
+    border: 4px solid #0f172a !important;
+    background-color: #f1f5f9 !important;
+    padding: 20px 24px !important;
+    border-radius: 14px !important;
+    margin-top: 20px !important;
+  }
+
+  .single-receipt-total-amount {
+    font-size: 30pt !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+  }
+
+  .single-receipt-signatures {
+    margin-top: 32px !important;
+    padding-top: 20px !important;
+    border-top: 3px solid #0f172a !important;
+    font-size: 13pt !important;
+    font-weight: bold !important;
+  }
+
+  /* Dedicated Batch Electricity Invoices Vouchers Printing */
+  body.printing-batch-vouchers-active .printable-container > *:not(.batch-vouchers-print-container),
+  body.printing-batch-vouchers-active .no-print {
+    display: none !important;
+  }
+
+  body.printing-batch-vouchers-active .batch-vouchers-print-container {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .invoice-voucher-page {
+    page-break-inside: avoid !important;
+    page-break-after: always !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Thermal Receipt Mode */
+  .thermal-receipt-container {
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 8px !important;
+    font-size: 9pt !important;
+    line-height: 1.3 !important;
+    border: 1px dashed #000 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+
+
